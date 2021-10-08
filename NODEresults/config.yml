@@ -1,0 +1,100 @@
+target:
+- Default
+continuous_cols:
+- tenure
+- MonthlyCharges
+- TotalCharges
+categorical_cols:
+- gender
+- SeniorCitizen
+- Partner
+- Dependents
+- PhoneService
+- MultipleLines
+- InternetService
+- OnlineSecurity
+- OnlineBackup
+- DeviceProtection
+- TechSupport
+- StreamingTV
+- StreamingMovies
+- Contract
+- PaperlessBilling
+- PaymentMethod
+date_columns: []
+encode_date_columns: true
+validation_split: 0.2
+continuous_feature_transform: null
+normalize_continuous_features: true
+quantile_noise: 0
+num_workers: 0
+categorical_dim: 16
+continuous_dim: 3
+task: classification
+embedding_dims: null
+learning_rate: 0.001
+loss: CrossEntropyLoss
+metrics:
+- accuracy
+metrics_params:
+- {}
+target_range: null
+seed: 42
+num_layers: 2
+num_trees: 1024
+additional_tree_output_dim: 3
+depth: 5
+choice_function: entmax15
+bin_function: entmoid15
+max_features: null
+input_dropout: 0.0
+initialize_response: normal
+initialize_selection_logits: uniform
+threshold_init_beta: 1.0
+threshold_init_cutoff: 1.0
+embed_categorical: false
+embedding_dropout: 0.0
+_module_src: node
+_model_name: NODEModel
+_config_name: NodeConfig
+batch_size: 512
+fast_dev_run: false
+max_epochs: 50
+min_epochs: 1
+max_time: null
+accumulate_grad_batches: 2
+auto_lr_find: false
+auto_select_gpus: true
+check_val_every_n_epoch: 1
+gradient_clip_val: 0.0
+overfit_batches: 0.0
+deterministic: false
+profiler: null
+early_stopping: null
+early_stopping_min_delta: 0.001
+early_stopping_mode: min
+early_stopping_patience: 3
+checkpoints: valid_loss
+checkpoints_path: saved_models
+checkpoints_name: null
+checkpoints_mode: min
+checkpoints_save_top_k: 1
+load_best: true
+track_grad_norm: -1
+optimizer: type
+optimizer_params:
+  nus:
+  - 0.7
+  - 1.0
+  betas:
+  - 0.95
+  - 0.998
+lr_scheduler: OneCycleLR
+lr_scheduler_params:
+  max_lr: 0.002
+  epochs: 50
+  steps_per_epoch: 7
+lr_scheduler_monitor_metric: valid_loss
+output_dim: 2
+node_input_dim: 19
+checkpoint_callback: true
