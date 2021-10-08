@@ -15,7 +15,7 @@ This repo contains a trained Neural Oblivious Decision Ensembles model that pred
  pytorch enabled with gpu and a CUDA compatible system. 
  
  The deployable model on the other hand is configured to run on cpu. To deploy the model locally in a container,
- make sure docker is installed, then clone this directory. From the root folder where the Dockerfile resides, run the following commands:
+ make sure docker is installed, then clone this directory (use git clone. downloading the zip will not download the large model.cpkt file that's stored on git lfs. From the root folder where the Dockerfile resides, run the following commands:
  
  `docker build -t finantiertest .`
  
@@ -51,7 +51,7 @@ This repo contains a trained Neural Oblivious Decision Ensembles model that pred
 }`
 
 Ensure that the keys and datatypes match the example above. The API checks for the correct format to pass into the model and will 
-return a Bad Request describing the issue with the payload if a malformed payload is provided. The request will take around 15s to return a
+return a Bad Request describing the issue with the payload if a malformed payload is provided. The request will take around 10s to return a
 response. As such, it is recommended to request a prediction for one customer at a time, although providing multiple instances in the payload is also
 possible.
 
